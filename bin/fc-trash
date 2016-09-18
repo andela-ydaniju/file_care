@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'file_care'
+FileUtils.trash ARGV
