@@ -7,6 +7,8 @@ module FileCare
       destination = "#{Dir.home}/.Trash"
       FileUtils.mv(file, destination)
     end
+  rescue Errno::ENOENT => e
+    puts e.message
   end
 end
 
