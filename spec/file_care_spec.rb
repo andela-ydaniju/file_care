@@ -6,7 +6,7 @@ describe FileCare do
     expect(FileCare::VERSION).not_to be nil
   end
 
-  describe 'trash' do
+  describe 'trash', type: :aruba do
     context 'when called on single file' do
       before(:each) do
         FileUtils.mkdir_p 'tmp/touch'
@@ -15,9 +15,11 @@ describe FileCare do
       after(:each) do
         FileUtils.rm_r 'tmp/touch', force: true
       end
+
+      let(:file) { 'tmp/touch/delete.rb' }
       it 'moves file to Trash dir' do
-        FileUtils.touch 'tmp/touch/delete.rb'
-        FileUtils.trash('tmp/touch/delete.rb')
+        FileUtils.touch file
+        FileUtils.trash file
         expect(File.exist?('tmp/touch/delete.rb')).to be false
       end
     end
