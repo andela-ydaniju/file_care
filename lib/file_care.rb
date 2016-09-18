@@ -2,5 +2,10 @@
 require 'file_care/version'
 
 module FileCare
-  # Your code goes here...
+  def trash(*args)
+  end
+end
+
+module FileUtils
+  extend FileCare
 end
