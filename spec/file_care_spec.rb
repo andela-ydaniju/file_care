@@ -12,10 +12,6 @@ describe FileCare do
         FileUtils.mkdir_p 'tmp/touch'
       end
 
-      after(:each) do
-        FileUtils.rm_r 'tmp/touch', force: true
-      end
-
       let(:file) { 'tmp/touch/delete.rb' }
       it 'moves file to Trash dir' do
         FileUtils.touch file
@@ -32,10 +28,6 @@ describe FileCare do
     context 'when called on multiple files' do
       before(:each) do
         FileUtils.mkdir_p 'tmp/touch'
-      end
-
-      after(:each) do
-        FileUtils.rm_r 'tmp/touch', force: true
       end
 
       let(:file1) { 'tmp/touch/delete1.rb' }
