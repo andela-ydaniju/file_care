@@ -3,7 +3,6 @@
 
 require 'bundler/setup'
 require 'file_care'
-require 'fc-trash'
 
 # require "pry"
 # Pry.start
