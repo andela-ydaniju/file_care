@@ -18,7 +18,7 @@ module FileCare
   end
 
   def add_time(file)
-    now = Time.now.strftime('%H.%M.%S %p')
+    now = Time.now.strftime('%l.%M.%S %p')
     base = File.basename(file, '.*')
     if File.directory? base
       return "#{sanitize!(file)} #{now}"
