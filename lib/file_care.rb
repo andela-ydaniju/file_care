@@ -5,7 +5,7 @@ module FileCare
   def trash(*args)
     args.each do |file|
       if File.exist? "#{destination}/#{File.basename(file)}"
-        FileUtils.mv(file, file = "#{sanitize!(file)}#{Time.now}")
+        FileUtils.mv(file, file = add_time(file))
       end
       FileUtils.mv(file, destination)
     end
@@ -15,6 +15,16 @@ module FileCare
 
   def destination
     "#{Dir.home}/.Trash"
+  end
+
+  def add_time(file)
+    now = Time.now.strftime('%H.%M.%S %p')
+    base = File.basename(file, '.*')
+    if File.directory? base
+      return "#{sanitize!(file)} #{now}"
+    else
+      return "#{sanitize!(base)} #{now}#{File.extname(file)}"
+    end
   end
 
   def sanitize!(file)
