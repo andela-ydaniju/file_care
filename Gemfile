@@ -3,3 +3,4 @@ source 'https://rubygems.org'
 
 # Specify your gem's dependencies in file_care.gemspec
 gemspec
+gem 'coveralls', require: false

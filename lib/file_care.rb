@@ -2,5 +2,16 @@
 require 'file_care/version'
 
 module FileCare
-  # Your code goes here...
+  def trash(*args)
+    args.each do |file|
+      destination = "#{Dir.home}/.Trash"
+      FileUtils.mv(file, destination)
+    end
+  rescue Errno::ENOENT => e
+    puts e.message
+  end
+end
+
+module FileUtils
+  extend FileCare
 end

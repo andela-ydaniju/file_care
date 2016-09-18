@@ -1,4 +1,5 @@
 # FileCare
+[![Coverage Status](https://coveralls.io/repos/github/andela-ydaniju/file_care/badge.svg?branch=master)](https://coveralls.io/github/andela-ydaniju/file_care?branch=master) [![Build Status](https://travis-ci.org/andela-ydaniju/file_care.svg?branch=touch_command)](https://travis-ci.org/andela-ydaniju/file_care)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/file_care`. To experiment with that code, run `bin/console` for an interactive prompt.
 
