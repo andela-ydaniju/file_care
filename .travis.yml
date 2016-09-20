@@ -2,9 +2,4 @@ sudo: true
 language: ruby
 rvm:
   - 2.3.1
-before_install:
-  - rvm gemset create
-  - rvm install 2.3.1
-  - gem install bundler -v 1.12.5
-os:
-  - osx
+before_install: gem install bundler -v 1.12.5
